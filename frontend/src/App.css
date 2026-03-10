@@ -1,0 +1,390 @@
+
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* Main container - full screen flex layout */
+.crm-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Left panel - 70% width, bigger */
+.left-panel {
+  flex: 7;
+  padding: 24px;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Right panel - 30% width */
+.right-panel {
+  flex: 3;
+  padding: 16px;
+  border-left: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+/* Interaction Form - Centered card design */
+.interaction-form {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.page-title {
+  margin: 0 0 28px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #383f4c;
+  text-align: start;
+  background: linear-gradient(135deg, #1048a3bb 0%, #6c2020 100%, #e2c6d9c8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form rows - two column layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Input fields - consistent modern styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Highlight for updated fields */
+.highlight {
+  border-color: #f59e0b !important;
+  background-color: #fef3c7 !important;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Textarea specific */
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Sentiment group - horizontal layout */
+.sentiment-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.sentiment-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.sentiment-group label:hover {
+  background-color: #f1f5f9;
+}
+
+.sentiment-group input[type="radio"] {
+  margin: 0;
+}
+
+/* Full width groups (like attendees, topics) */
+.form-group:not(.sentiment-group) input[readonly],
+.form-group:not(.sentiment-group) textarea[readonly] {
+  background-color: #f1f5f9;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .left-panel {
+    padding: 20px;
+  }
+  
+  .interaction-form {
+    padding: 24px;
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crm-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+  
+  .left-panel {
+    padding: 16px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .interaction-form {
+    padding: 20px;
+    margin: 0 4px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sentiment-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sentiment-group label {
+    justify-content: flex-start;
+  }
+}
+
+/* Scrollbar styling */
+.left-panel::-webkit-scrollbar,
+.right-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left-panel::-webkit-scrollbar-track,
+.right-panel::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.left-panel::-webkit-scrollbar-thumb,
+.right-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.left-panel::-webkit-scrollbar-thumb:hover,
+.right-panel::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ------------ GENERIC INPUTS (outside form groups, e.g. chat) ------------ */
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Chat Panel */
+.ai-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-window {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin: 25px 20px 25px 20px;
+  max-width: 90%;
+  font-size: 16px;
+}
+
+.chat-bubble.user {
+  background: #e3f2fd;
+  align-self: flex-end;
+}
+
+.chat-bubble.ai {
+  background: #e8f5e9;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+}
+
+/* Buttons */
+button {
+  background: #1976d2;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  background: #0f5ec0;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .crm-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .right-panel {
+    width: 100%;
+  }
+
+  .interaction-form {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Icon input styling */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+  z-index: 1;
+}
+
+.input-with-icon input {
+  padding-left: 44px !important; /* Space for icon */
+}
+
+/* AI Suggestions styling */
+.ai-suggestions {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+  font-size: 14px;
+}
+
+.suggestion-icon {
+  width: 16px;
+  height: 16px;
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
