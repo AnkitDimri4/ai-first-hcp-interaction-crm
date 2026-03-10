@@ -6,9 +6,27 @@
 
 An **intelligent CRM system** for Life Sciences field representatives to log and manage interactions with **Healthcare Professionals (HCPs)**. This **AI-First CRM** uses a **natural language AI assistant** to automatically extract structured information from user prompts, **eliminating manual form filling** and streamlining CRM workflows.
 
+---
 
 > #### **Live Demo:** [https://ai-first-hcp-interaction-crm.vercel.app/](https://ai-first-hcp-interaction-crm.vercel.app/)  
 
+---
+> ### Example Prompts / Testing
+> - You can test the AI agent using the following example prompts for each tool:
+>   - **Log Interaction (`log_interaction_tool`)**
+>     - "I met Dr Smith today at 3 PM for a meeting about Product X efficiency. John from marketing also attended. I shared brochures and the response was positive. We will follow up on 25 March."
+>   - **Edit Interaction (`edit_interaction_tool`)**
+>     - "Update the last interaction: the HCP name is actually Dr John and the sentiment should be Negative."
+>     - "For my most recent interaction, change the time to 4 PM and add that we discussed pricing as well."
+>   - **Add Follow-up (`add_followup_tool`)**
+>     - "Set the follow-up date for the last interaction to 30 March 2026."
+>     - "Please move the follow-up for my latest interaction to next Monday."
+>   - **Update Materials (`update_materials_tool`)**
+>     - "Also note that I shared the OncoBoost Phase III PDF in the last meeting."
+>     - "Update the materials shared for my last interaction to: brochures, OncoBoost Phase III PDF, dosing guidelines."
+>   - **List / Get Interactions (`get_interactions_tool`)**
+>     - "Show me the last 3 interactions and summarize their sentiments."
+>     - "List my recent interactions with Dr Smith and tell me the sentiment for each.
 ---
 
 ## Overview
