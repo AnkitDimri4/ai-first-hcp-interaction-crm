@@ -52,6 +52,9 @@ An **intelligent CRM system** for Life Sciences field representatives to log and
 
 ## Architecture
 
+<img width="1408" height="768" alt="Architecture" src="https://github.com/user-attachments/assets/8f6f28b9-8b34-469f-a70a-72534edfbcdd" />
+
+
 ### Backend Flow
 
 1. The **frontend** sends a `POST /agent/chat` request with the user’s message.
