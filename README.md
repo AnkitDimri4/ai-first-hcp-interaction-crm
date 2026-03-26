@@ -134,8 +134,7 @@ Full-Stack & AI Developer
 
 ### Project Info
 
-- **Project:** AI-First HCP Interaction CRM – Frontend  
-- **Purpose:** Python Developer Internship Assessment  
+- **Project:** AI-First HCP Interaction CRM 
 - **Organization:** AIVOA  
 - **Year:** 2026
 
